@@ -1,10 +1,13 @@
 <script>
   export default {
-    props: {
-      todos: Array
-    },
-    emits: ['delete-todo']
-  }
+      props: {
+        todos: Array
+      },
+      emits: ['delete-todo'],
+
+    }
+
+
 </script>
 
 <template>
@@ -22,12 +25,15 @@
       <tbody>
         <tr v-for="todo in todos" :key="todo.id">
           <th scope="row">{{ todo.text }}</th>
-          <td>{{ todo.date }}</td>
+          <td>{{ todo.date}}</td>
           <td>tâche complète</td>
           <td>Editer</td>
           <td>
-            <button @click="$emit('delete-todo, todo.id')" class="btn btn-danger">Supprimer</button>
-          </td>          
+            <button @click="$emit('delete-todo', todo.id )" 
+            class="btn btn-danger">
+            Supprimer
+            </button>
+          </td>    
         </tr>
       </tbody>
     </table>
