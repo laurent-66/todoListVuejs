@@ -25,7 +25,7 @@
       <tbody>
         <tr v-for="todo in todos" :key="todo.id">
           <th scope="row">{{ todo.text }}</th>
-          <td>{{ todo.date}}</td>
+          <td>{{ todo.date }}</td>
           <td>tâche complète</td>
           <td>Editer</td>
           <td>

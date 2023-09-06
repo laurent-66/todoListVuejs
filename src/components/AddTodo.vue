@@ -9,16 +9,17 @@ export default {
     emits: ['add-todo'],
 
     methods : {
-        
+
         onSubmit(e) {
             if(!this.text){
                 alert("Veuillez entrer le texte pour la tâche")
             } else {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 const newTodo = {
                     id: Math.floor(Math.random()*100000),
                     text: this.text,
                     complete: false,
-                    date: new Date().toDateString(),
+                    date: new Date().toLocaleDateString('fr-FR', options),
                     dateCompleted: false
                 }
                 this.$emit('add-todo', newTodo)
